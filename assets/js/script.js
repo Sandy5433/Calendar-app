@@ -16,6 +16,7 @@ $(function () {
   // var hourBtn = $(hourDiv[0]).children("button")[0];
   // hourBtn.addEventListener('click', saveToLocal)
 
+//all buttons in the time-block class
   var saveBtns = $(".time-block button");
   saveBtns.on('click', saveToLocal)
 
@@ -25,24 +26,38 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-var currentTime = parseInt(dayjs().format("h"))
+  //get current time as numbers instead of string by using parseInt
+var currentTime = parseInt(dayjs().format("HH"))
 console.log(currentTime)
 
+
+
+
+
 function colorDiv () {
-var divTime = parseInt(this.id.split("-")[1])
+var divTime = parseInt(this.id.split("-")[1]) 
+//'this' = each block of the time-block class;split id of each time-block by the dash; select index 1 (index 0 = hour) 
 console.log(divTime)
+debugger
+console.log(this.id)
 if(divTime == currentTime){
+  
   this.classList.add("present")
-}
-if(divTime < currentTime){
-  this.classList.add("past")
-}
-if(divTime > currentTime){
-  this.classList.add("future")
+} else if (divTime < currentTime){
+  document.getElementById(this.id).classList.add("past")
+  // this.classList.add("past")
+} else if (divTime > currentTime){
+  document.getElementById(this.id).classList.add("future")
 }
 }
 
 var timeDiv = $(".time-block")
+//run colorDiv function each time when var timeDiv is called
+
+// timeDiv.forEach( x => {
+//   colorDiv(x);
+//  })
+ 
 timeDiv.each(colorDiv)
 
   // TODO: Add code to get any user input that was saved in localStorage and set
@@ -50,30 +65,30 @@ timeDiv.each(colorDiv)
   // attribute of each time-block be used to do this?
   
   function saveToLocal() {
-    var key = this.parentElement.id
-    var value = $(this.parentElement).children("textarea").val()
-    console.log(key)
-    console.log(value)
+    var time = this.parentElement.id //'this' refers to the button that is clicked; traverse to its parent 'div' and select its ID
+    var task = $(this.parentElement).children("textarea").val()
+    console.log(time)
+    console.log(task)
     // var task9am = $(".description").val().trim();
     // console.log(task9am); 
-    localStorage.setItem(key, value); 
-   }
+    localStorage.setItem(time, task); 
+  }
 
-   function loadTask() {
-   
-   var key = this.parentElement.id
-   var value = localStorage.getItem(key)
-   console.log(value)
-  //  $(this).val(value)
-  this.value = value
-     }
+  function loadTask() {
+    var key = this.parentElement.id //'this' refers to the textarea tag
+    var userInput = localStorage.getItem(key) //retrieves var task that was saved to local
+    console.log(userInput)
+    // jQury: $(this).val(userInput)
+    this.value = userInput //load saved task into the textarea box (changing the value of 'this' to userInput) 
+  }
+
    var textAreas = $(".time-block textarea"); 
    console.log(textAreas)
-   textAreas.each(loadTask)
+   textAreas.each(loadTask)   //activate loadTask function for each textAreas
+
   // }
 
   // TODO: Add code to display the current date in the header of the page.
 var currentDayEl = dayjs().format("MMM D, YYYY");
 $("#currentDay").text(currentDayEl);
 });
-
