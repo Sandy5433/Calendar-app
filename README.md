@@ -1,99 +1,38 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Calendar app
 
-## Your Task
+## Description
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+For this week's project, the developer is given a starter code to construct a Calendar app. This application runs in the browser and displays usual business hour of a day. Each hour on the calendar is colour coded to reflect if the time block is in the past, present or future. The text area of each time block allows user to enter their input. This can then be saved into the local storage and reloaded onto the page after refreshing the browser.
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+You can access the application at https://sandy5433.github.io/Calendar-app/
 
-## User Story
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+## Usage
 
-## Acceptance Criteria
+Below is a screenshot of the deployed webpage
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+![alt="CalendarApp"](assets/images/calendar.png)
 
-The following animation demonstrates the application functionality:
+The current date is displayed at the top of the time block. The time blocks are colour coded where gray represents past, red for present, and green for future time. Enter any notes in the text area of the calendar and click the save icon on the left hand side. You will be able to retrieve the entered value after refreshing or closing and reopening the browser.  
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 
-## Grading Requirements
+## Support
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+Please reach out to Sandy Hung at sandyhung83@yahoo.com.tw if you have any questions or comments regarding this project. Alternatively, head on to my GitHub at https://github.com/Sandy5433 to see more exciting projects.
 
-This Challenge is graded based on the following criteria:
+## Roadmap
 
-### Technical Acceptance Criteria: 40%
+New coding projects will be released every Wednesday night. My first project, refactoring html/css code, can be found on my GitHub.
 
-* Satisfies all of the above acceptance criteria plus the following:
+## Contributing
 
-  * Uses a date utility library to work with date and time
+If you would like to contribute to the development of this timed quiz application, you can reach out to me via the contact details on my portfolio webpage. 
 
-### Deployment: 32%
+## Authors and acknowledgment
 
-* Application deployed at live URL
+Many thanks to my instructors and tutors from USYD coding bootcamp who stayed back after class to support me on my journey in coding.
 
-* Application loads with no errors
 
-* Application GitHub URL submitted
+## Project status
 
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Completed 14/12/2022

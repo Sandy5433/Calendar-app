@@ -30,10 +30,6 @@ $(function () {
 var currentTime = parseInt(dayjs().format("HH"))
 console.log(currentTime)
 
-
-
-
-
 function colorDiv () {
 var divTime = parseInt(this.id.split("-")[1]) 
 //'this' = each block of the time-block class;split id of each time-block by the dash; select index 1 (index 0 = hour) 
@@ -44,19 +40,16 @@ if(divTime == currentTime){
   
   this.classList.add("present")
 } else if (divTime < currentTime){
-  document.getElementById(this.id).classList.add("past")
-  // this.classList.add("past")
+  // document.getElementById(this.id).classList.add("past")
+  this.classList.add("past")
 } else if (divTime > currentTime){
-  document.getElementById(this.id).classList.add("future")
+  // document.getElementById(this.id).classList.add("future")
+  this.classList.add("future")
 }
 }
 
 var timeDiv = $(".time-block")
 //run colorDiv function each time when var timeDiv is called
-
-// timeDiv.forEach( x => {
-//   colorDiv(x);
-//  })
  
 timeDiv.each(colorDiv)
 
@@ -69,8 +62,6 @@ timeDiv.each(colorDiv)
     var task = $(this.parentElement).children("textarea").val()
     console.log(time)
     console.log(task)
-    // var task9am = $(".description").val().trim();
-    // console.log(task9am); 
     localStorage.setItem(time, task); 
   }
 
@@ -79,7 +70,7 @@ timeDiv.each(colorDiv)
     var userInput = localStorage.getItem(key) //retrieves var task that was saved to local
     console.log(userInput)
     // jQury: $(this).val(userInput)
-    this.value = userInput //load saved task into the textarea box (changing the value of 'this' to userInput) 
+    this.value = userInput //load saved task into the textarea box (changing the value of 'this' to var userInput) 
   }
 
    var textAreas = $(".time-block textarea"); 
@@ -88,7 +79,7 @@ timeDiv.each(colorDiv)
 
   // }
 
-  // TODO: Add code to display the current date in the header of the page.
+  //display the current date in the header of the page.
 var currentDayEl = dayjs().format("MMM D, YYYY");
 $("#currentDay").text(currentDayEl);
 });
